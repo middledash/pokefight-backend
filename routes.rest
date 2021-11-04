@@ -1,0 +1,55 @@
+GET http://localhost:3000
+
+###
+
+POST http://localhost:3000/trainers
+Content-Type: application/json
+
+{
+    "first_name": "Ash",
+    "last_name": "Pepito",
+    "class_type": "Champion"
+}
+
+###
+
+GET http://localhost:3000/trainers
+
+###
+
+GET http://localhost:3000/trainers/6183c634d123524173567c96
+
+###
+
+PATCH http://localhost:3000/trainers/6183c634d123524173567c96
+Content-Type: application/json
+
+{
+    "key": "first_name",
+    "value": "Satoshi"
+}
+
+###
+PUT http://localhost:3000/trainers/6183c634d123524173567c96
+Content-Type: application/json
+
+
+{
+    "first_name": "Satoshi",
+    "last_name": "Nakamura",
+    "class_type": "Champion"
+}
+
+###
+DELETE http://localhost:3000/trainers/6183c634d123524173567c96
+
+###
+DELETE http://localhost:3000/trainers
+Content-Type: application/json
+
+{
+    "condition": {
+        "key": "last_name",
+        "value": "Pepito"
+    }
+}
